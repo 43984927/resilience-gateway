@@ -14,6 +14,6 @@ RUN apk add --no-cache tzdata && \
     echo "Asia/Shanghai" > /etc/timezone
 
 COPY --from=builder /app/target/resilience-gateway-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 7860
+EXPOSE 8080
 
 ENTRYPOINT ["java", "-Xms256m", "-Xmx512m", "-XX:+UseG1GC", "-jar", "app.jar"]
